@@ -14,7 +14,7 @@ body {
   display: flex; 
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  font-family: 'Segoe UI';
   line-height: 1.6;
   background-color: #f0f0f0;
   color: #333;
@@ -81,7 +81,7 @@ main {
 /* Card Component */
 .card {
   background: white;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 5px;
@@ -89,7 +89,7 @@ main {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   nav ul{
     flex-wrap: wrap;
   }
