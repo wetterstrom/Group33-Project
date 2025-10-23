@@ -67,6 +67,9 @@ nav ul li a:hover {
   background: #555;
 }
 
+/* Keyboard focus for accessibility */
+
+
 /* Highlight active link */
 nav ul li a.active {
   background: #777;
@@ -85,7 +88,9 @@ main {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
+  text-align: left;
+  margin-top: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -97,6 +102,37 @@ main {
   }
 }
 
+/* Media (image + text) side-by-side */
+.media {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* justera centrerat eller toppställt */
+}
+
+.media img {
+  width: 200px;      /* justera storlek efter behov */
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0;    /* hindrar att bilden krymper för mycket */
+  object-fit: cover;
+}
+
+/* Textdelen tar resten av bredden */
+.media .media-text {
+  flex: 1;
+}
+
+/* Responsivt: stapla på smalare skärmar */
+@media (max-width: 700px) {
+  .media {
+    flex-direction: column;
+  }
+  .media img {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 /* Footer */
 footer {
   background: #333;
@@ -105,7 +141,7 @@ footer {
   text-align: center;
   margin-top: 20px;
   width: 100%;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.15)
 }
 
 footer a {
