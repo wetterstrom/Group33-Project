@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 /* Body Styling */
 body {
   display: flex; 
@@ -20,15 +15,14 @@ body {
   background-color: #f0f0f0;
   color: #333;
   text-align: center;
-   padding: 20px;
+  padding: 20px;
 }
 
 /* Header */
 header {
   background: #4CAF50;
   color: #333;
-  padding: 35px  0;
-  text-align: center;
+  padding: 35px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -58,22 +52,18 @@ nav ul li a {
   padding: 12px 18px;
   color: white;
   text-decoration: none;
-  background: #333;
   border-radius: 5px;
   transition: background 0.3s ease;
 }
-/* Hover effect */
+
+/* Hover effekt */
 nav ul li a:hover {
   background: #555;
 }
 
-/* Keyboard focus for accessibility */
-
-
-/* Highlight active link */
+/* Highlight aktiv */
 nav ul li a.active {
   background: #777;
-
 }
 
 /* Main Content */
@@ -82,7 +72,7 @@ main {
   padding: 20px;
 }
 
-/* Card Component */
+/* Card design */
 .card {
   background: white;
   max-width: 800px;
@@ -102,18 +92,19 @@ main {
   }
 }
 
-/* Media (image + text) side-by-side */
+/* Media (bild + text) side-by-side */
 .media {
   display: flex;
   gap: 20px;
-  align-items: flex-start; /* justera centrerat eller toppställt */
+  align-items: flex-start; 
 }
 
+/* Bilden har fast bredd */
 .media img {
-  width: 200px;      /* justera storlek efter behov */
+  width: 200px;      
   height: auto;
   border-radius: 6px;
-  flex-shrink: 0;    /* hindrar att bilden krymper för mycket */
+  flex-shrink: 0;    
   object-fit: cover;
 }
 
@@ -130,6 +121,56 @@ main {
   .media img {
     width: 100%;
     max-width: none;
+  }
+}
+
+/* Referens Link */
+.reference-link {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.reference-link:hover {
+  text-decoration: underline;
+}
+
+/* Hover summering för desktop */
+.reference-link::after {
+  content: attr(data-summary);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: max-content;
+  max-width: 300px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+/* Desktop version */
+@media (hover: hover) {
+  .reference-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 5px);
+  }
+}
+
+/* Touch device version */
+@media (hover: none) {
+  .reference-link:active::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 5px);
   }
 }
 
